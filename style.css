@@ -16,36 +16,47 @@ table th{
     text-transform: uppercase;
 }
 
-@media screen and (max-width:600px) {
-    table caption{
+@media screen and (max-width: 600px) {
+    table caption {
         font-size: 1.5em;
     }
 
-    table thead{
-        display: none;
+    /* Hide table header. */
+    table thead {
+        display:none
     }
-    
-    table tr{
+
+    /* Force table to not be like tables. */
+    table tr {
         display: block;
         margin-bottom: 1em;
     }
-    
-    table td::before{
-        content:attr(data-label);
+
+    /* Behave like a "row" */
+    table td {
+        display: block;
+        text-align: right;
+        border-bottom: 0px;
+    }
+
+    /* Behave like a table header */
+    table td::before {
+        content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
     }
-    
-    table td:last-child{
+
+    table td:last-child {
         border-bottom: 0;
         border: 1px solid #000000;
     }
-    
-    tr:nth-child(even){
+
+    tr:nth-child(even) {
         background-color: #dddddd;
     }
 }
+
 
 
 
